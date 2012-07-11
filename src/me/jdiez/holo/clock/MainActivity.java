@@ -61,32 +61,32 @@ public class MainActivity extends FragmentActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the primary
      * sections of the app.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {    	
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int i) {
-            Fragment fragment = new DummySectionFragment();
+            Fragment fragment = new HoloClockSectionFragment();
             Bundle args = new Bundle();
-            args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
+            args.putInt(HoloClockSectionFragment.ARG_SECTION_NUMBER, i + 1);
             fragment.setArguments(args);
             return fragment;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 0: return getString(R.string.title_section1).toUpperCase();
-                case 1: return getString(R.string.title_section2).toUpperCase();
-                case 2: return getString(R.string.title_section3).toUpperCase();
+                case 0: return getString(R.string.clock).toUpperCase();
+                case 1: return getString(R.string.stopwatch).toUpperCase();
+                case 2: return getString(R.string.timer).toUpperCase();
+                case 3: return getString(R.string.world).toUpperCase();
             }
             return null;
         }
@@ -95,8 +95,8 @@ public class MainActivity extends FragmentActivity {
     /**
      * A dummy fragment representing a section of the app, but that simply displays dummy text.
      */
-    public static class DummySectionFragment extends Fragment {
-        public DummySectionFragment() {
+    public static class HoloClockSectionFragment extends Fragment {
+        public HoloClockSectionFragment() {
         }
 
         public static final String ARG_SECTION_NUMBER = "section_number";
@@ -104,8 +104,24 @@ public class MainActivity extends FragmentActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View v = inflater.inflate(R.layout.stopwatch, container, false);
-            Bundle args = getArguments();
+        	Bundle args = getArguments();
+        	View v = null;
+        	switch(args.getInt(ARG_SECTION_NUMBER)) {
+        		case 1:
+        			v = inflater.inflate(R.layout.clock, container, false);
+        			break;
+        		case 2:
+        			v = inflater.inflate(R.layout.stopwatch, container, false);
+        			break;
+        		case 3:
+        			v = inflater.inflate(R.layout.timer, container, false);
+        			break;
+        		case 4:
+        			v = inflater.inflate(R.layout.world, container, false);
+        			break;
+        			
+        	}
+        	
             return v;
         }
     }
