@@ -1,10 +1,10 @@
 <resources>
 
     <string name="app_name">Holo Clock</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section1">Section 1</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="clock">Reloj</string>
+    <string name="stopwatch">Cronómetro</string>
+    <string name="timer">Cuenta atrás</string>
+    <string name="world">Hora mundial</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
 
