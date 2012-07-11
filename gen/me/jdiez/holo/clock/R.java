@@ -20,12 +20,14 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int menu_settings=0x7f080002;
+        public static final int editText1=0x7f080002;
+        public static final int menu_settings=0x7f080003;
         public static final int pager=0x7f080000;
         public static final int pager_title_strip=0x7f080001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int stopwatch=0x7f030001;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
